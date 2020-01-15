@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css?family=Vollkorn:400,600&display=swap");
+body, h1, h2, h3, h4, h5, h6, p, ul {
+  margin: 0;
+}
+
+body {
+  background: #a6808c;
+  color: #444444;
+  font-family: 'Vollkorn', serif;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  word-spacing: 0.15em;
+  overflow-x: hidden;
+}
+
+.logo {
+  display: block;
+  text-align: center;
+}
+
+.logo img {
+  width: 48px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.container {
+  padding: 2.4rem;
+}
+
+.container > h1 {
+  text-align: center;
+}
+
+.container > h2 {
+  text-align: center;
+  margin-bottom: 2.4rem;
+  font-size: 1rem;
+}
+
+.card {
+  background: #c49c8c;
+  padding: 1.2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.card .info .oi {
+  font-size: 1rem;
+}
+
+.card .actions {
+  text-align: right;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.card .actions button {
+  background: #eeeeee;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  font-family: 'Bahnschrift', sans-serif;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: background 120ms ease-in;
+  transition: background 120ms ease-in;
+}
+
+.card .actions button:hover {
+  background: #ffffff;
+}
+
+.background {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #706677;
+  height: 100%;
+  width: 33%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  border-right: 1px solid #c49c8c;
+  -webkit-animation: 300ms ease-in 0s 1 slideInFromLeft;
+          animation: 300ms ease-in 0s 1 slideInFromLeft;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(320px, 33%) minmax(400px, 1fr);
+      grid-template-columns: minmax(320px, 33%) minmax(400px, 1fr);
+  width: 100%;
+  z-index: 10;
+}
+
+.section.content {
+  -webkit-transition: background 120ms ease-in;
+  transition: background 120ms ease-in;
+}
+
+.section.content:hover {
+  background: #565264;
+}
+
+.section.content:hover .code {
+  color: #cccccc;
+}
+
+.docs {
+  padding: 14px 25px 1px 50px;
+  color: #cccccc;
+  opacity: 0;
+  -webkit-animation: 300ms ease-in 0.3s 1 fadeTextIn;
+          animation: 300ms ease-in 0.3s 1 fadeTextIn;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.docs h1 {
+  font-weight: 500;
+  margin: 40px 0 15px 0;
+  color: #eeeeee;
+}
+
+.docs p {
+  margin: 0 0 15px 0;
+}
+
+.docs a {
+  color: #bbbbbb;
+  -webkit-transition: color 120ms ease-in;
+  transition: color 120ms ease-in;
+}
+
+.docs a:visited {
+  color: #aaaaaa;
+}
+
+.docs a:hover {
+  color: #fd7297;
+}
+
+.code {
+  padding: 14px 15px 16px 50px;
+  -webkit-transition: color 120ms ease-in;
+  transition: color 120ms ease-in;
+  opacity: 0;
+  -webkit-animation: 300ms ease-in 0.1s 1 fadeTextIn;
+          animation: 300ms ease-in 0.1s 1 fadeTextIn;
+  overflow-x: scroll;
+  scrollbar-color: #c49c8c transparent;
+  scrollbar-width: thin;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.code p {
+  margin: 0 0 15px 0;
+  min-width: 400px;
+}
+
+.close {
+  position: fixed;
+  top: 2.4rem;
+  right: 2.4rem;
+  background: #eeeeee url("../images/chevron-top-2x.png") no-repeat;
+  background-position: 8px 8px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  -webkit-transition: background 120ms ease-in;
+  transition: background 120ms ease-in;
+  -webkit-transform: translateY(calc(-2.4rem - 64px));
+          transform: translateY(calc(-2.4rem - 64px));
+  -webkit-animation: 300ms ease-in 0.5s 1 slideInFromTop;
+          animation: 300ms ease-in 0.5s 1 slideInFromTop;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.close:hover {
+  background: #ffffff url("../images/chevron-top-2x.png") no-repeat;
+  background-position: 8px 6px;
+}
+
+@-webkit-keyframes fadeBackgroundIn {
+  0% {
+    background: transparent;
+    border-right: 1px solid transparent;
+  }
+  100% {
+    background: #706677;
+    border-right: 1px solid #c49c8c;
+  }
+}
+
+@keyframes fadeBackgroundIn {
+  0% {
+    background: transparent;
+    border-right: 1px solid transparent;
+  }
+  100% {
+    background: #706677;
+    border-right: 1px solid #c49c8c;
+  }
+}
+
+@-webkit-keyframes fadeTextIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeTextIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideInFromLeft {
+  0% {
+    width: 0;
+    min-width: 0;
+  }
+  100% {
+    width: 33%;
+    min-width: 320px;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    width: 0;
+    min-width: 0;
+  }
+  100% {
+    width: 33%;
+    min-width: 320px;
+  }
+}
+
+@-webkit-keyframes slideInFromTop {
+  0% {
+    -webkit-transform: translateY(calc(-2.4rem - 64px));
+            transform: translateY(calc(-2.4rem - 64px));
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    -webkit-transform: translateY(calc(-2.4rem - 64px));
+            transform: translateY(calc(-2.4rem - 64px));
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.image-list {
+  padding: 0;
+  height: 320px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (128px)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 128px);
+  grid-gap: 0.8rem;
+}
+
+.image-list li {
+  display: inline-block;
+  background: #c49c8c;
+  width: 128px;
+}
+
+.image-list li img {
+  display: block;
+  width: 128px;
+}
+
+.image-list li span {
+  display: block;
+  color: #444444;
+  padding: 0.4rem;
+  text-align: center;
+}
+/*# sourceMappingURL=default.css.map */
